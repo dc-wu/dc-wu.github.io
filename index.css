@@ -1,42 +1,110 @@
+body {
+    margin: 0;
+    padding-top: 70px;
+}
+
 * {
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     color: hsl(39, 97%, 13%);
 }
 
 .logocontainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 0px 32px; /* top rechts onder links*/
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 999;
+    height: 70px;
+    top: 0;
 }
 
 .logo {
     text-transform: uppercase;
     text-decoration:none;
-    color: hsl(207, 91%, 69%);
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 500;
+    transition: 1s;
+}
+
+.logo:hover {
+    color: hsl(325, 67%, 82%);
 }
 
 .nav-ul {
     display: flex;
     list-style: none;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0;
-    width: 75%;
+
 }
 
-.nav-ul a {
-    color: hsl(207, 91%, 69%);
+.nav-ul li a {
     text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 505;
     text-decoration: none;
+    padding-left: 50px;
+}
+
+.nav-ul li a:hover {
+   text-decoration: underline;
+}
+
+.intro {
+    padding: 0px 32px 0px 32px; 
+    display: flex;
+    justify-content: center;
+}
+
+.intro-left {
+    min-width: 350px;
+    max-width: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding-right: 8px;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.intro-right {
+    min-width: 350px;
+    max-width: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding-left: 8px;
 }
 
 @media (max-width: 700px) {
+    body {
+        padding-top: 0px;
+    }
+    .intro {
+        display: block;
+    }
+    .intro-left, .intro-right {
+        min-width: auto;
+        max-width: none;
+    }
     .logocontainer {
-     display: block;  
+     display: block;
+     position: relative;
+     height: auto;
+
     }
     .nav-ul {
      display: block;
+    }
+    .nav-ul li a {
+        padding: 0px;
     }
 }
