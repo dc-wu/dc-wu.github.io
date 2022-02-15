@@ -3,6 +3,12 @@ body {
     padding-top: 70px;
 }
 
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0px 32px;
+}
+
 * {
     font-family: 'Courier New', Courier, monospace;
     color: hsl(39, 97%, 13%);
@@ -39,7 +45,7 @@ body {
     display: flex;
     list-style: none;
     justify-content: flex-end;
-    padding: 0;
+    padding: 0px;
 
 }
 
@@ -55,10 +61,18 @@ body {
    text-decoration: underline;
 }
 
+h1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .intro {
-    padding: 0px 32px 0px 32px; 
     display: flex;
-    justify-content: center;
 }
 
 .intro-left {
@@ -70,11 +84,6 @@ body {
     padding-right: 8px;
 }
 
-h1 {
-    font-size: 30px;
-    font-weight: 500;
-}
-
 .intro-right {
     min-width: 350px;
     max-width: 50%;
@@ -84,17 +93,71 @@ h1 {
     padding-left: 8px;
 }
 
-@media (max-width: 700px) {
+.new-blocks {
+    display: flex;
+}
+
+.new-block {
+    width: 33%;
+    padding: 0px 8px 0px;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-right: 8px;
+}
+
+.new-block:nth-child(3) {
+    margin-right: 0px;
+}
+
+.new-block img {
+    max-width: 100%;
+    height: auto;
+}
+
+.new-blog {
+    position: relative;
+    flex-direction: column;
+}
+
+footer {
+   box-sizing: border-box;
+   width: 100%;
+    margin-top: 24px;
+    padding: 16px 32px;
+    border-top: 1px solid black;
+}
+.bottom {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 750px) {
     body {
         padding-top: 0px;
     }
+
     .intro {
         display: block;
     }
     .intro-left, .intro-right {
         min-width: auto;
         max-width: none;
+        padding: 0px;
     }
+
+    .new-blocks {
+        flex-direction: column;
+    }
+
+    .new-block {
+        min-width: auto;
+        width: auto;
+        margin-right: 0px;
+        margin-bottom: 8px;
+    }
+
     .logocontainer {
      display: block;
      position: relative;
